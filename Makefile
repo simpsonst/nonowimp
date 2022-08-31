@@ -10,7 +10,7 @@ CMP=cmp -s
 HTML2TXT=lynx -dump
 MARKDOWN=markdown
 
-VWORDS:=$(shell src/getversion.sh --prefix=v MAJOR MINOR PATCH)
+VWORDS:=$(shell src/getversion.sh --prefix=v MAJOR MINOR)
 VERSION:=$(word 1,$(VWORDS))
 BUILD:=$(word 2,$(VWORDS))
 
@@ -24,7 +24,7 @@ MYABSPATH=$(foreach f,$1,$(if $(patsubst /%,,$f),$(MYCURDIR)$f,$f))
 -include $(call MYABSPATH,config.mk)
 sinclude nonowimp-env.mk
 
-CPPFLAGS += -DVERSION='"$(shell $(CAT) docs/VERSION)"'
+CPPFLAGS += -DVERSION='"$(file <VERSION)"'
 
 test_binaries.c += nonowimp
 nonowimp_obj += fileio
@@ -46,7 +46,7 @@ nonowimp_lib += -lyac_draw
 nonowimp_lib += -lyac_os
 nonowimp_lib += -ledges
 
-TEXTFILES += HISTORY
+#TEXTFILES += HISTORY
 TEXTFILES += VERSION
 TEXTFILES += COPYING
 TEXTFILES += Guide
@@ -68,6 +68,8 @@ nonowimp_rof += $(call riscos_src,$(SOURCES))
 nonowimp_runimage=nonowimp
 
 include binodeps.mk
+
+tmp/obj/version.o: VERSION
 
 tmp/README.html: README.md
 	$(MKDIR) '$(@D)'

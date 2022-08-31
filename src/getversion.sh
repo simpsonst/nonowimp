@@ -13,8 +13,6 @@ while [ $# -gt 0 ] ; do
                 major_file="$arg"
             elif [ -z "$minor_file" ] ; then
                 minor_file="$arg"
-            elif [ -z "$patch_file" ] ; then
-                patch_file="$arg"
             fi
             ;;
     esac
@@ -40,22 +38,20 @@ else
 fi
 
 unset longext
-if [ -n "$major_file" -a -r "$major_file" ] &&
-       [[ "$release" =~ ^([0-9]+) ]] ; then
-    longext="$alpha"
-    release="$((BASH_REMATCH[1] + 1)).0.0"
-elif [ -n "$minor_file" -a -r "$minor_file" ] &&
-         [[ "$release" =~ ^([0-9]+)\.([0-9]+) ]] ; then
-    longext="$alpha"
-    release="${BASH_REMATCH[1]}.$((BASH_REMATCH[2] + 1)).0"
-elif [ -n "$patch_file" -a -r "$patch_file" ] &&
-         [[ "$release" =~ ^([0-9]+\.[0-9]+)\.([0-9]+) ]] ; then
-    longext="$alpha"
-    release="${BASH_REMATCH[1]}.$((BASH_REMATCH[2] + 1))"
-elif [ -n "$gitadv" ] &&
-         [[ "$release" =~ ^([0-9]+\.[0-9]+\.[0-9]+) ]] ; then
-    longext=".$((gitadv + 1))$alpha"
-    release="${BASH_REMATCH[1]}"
+if [[ "$release" =~ ^([0-9]+)[^0-9\.]*\.([0-9]+) ]] ; then
+    if [ -n "$major_file" -a -r "$major_file" ] ; then
+        longext="$alpha"
+        release="$((BASH_REMATCH[1] + 1)).0"
+    elif [ -n "$minor_file" -a -r "$minor_file" ] ; then
+        longext="$alpha"
+        release="${BASH_REMATCH[1]}.$((BASH_REMATCH[2] + 1))"
+    elif [ -n "$gitadv" ] ; then
+        longext=".$((gitadv + 1))$alpha"
+        release="${BASH_REMATCH[1]}.${BASH_REMATCH[2]}"
+    else
+        longext=".1$alpha"
+        release="${BASH_REMATCH[1]}.${BASH_REMATCH[2]}"
+    fi
 fi
 
 longrelease="${release}$longext${gitrev:+-g"$gitrev"}"
