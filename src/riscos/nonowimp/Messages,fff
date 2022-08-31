@@ -1,0 +1,94 @@
+tn_nonogram:Nonogram Solver
+
+str_website:http://www.comp.lancs.ac.uk/~ss/software/pkg-nonowimp
+
+em_dragsave:To save, drag the icon to a directory display
+em_premorerow:Row-heavy puzzle (
+em_postmorerow:)
+em_premorecol:Column-heavy puzzle (
+em_postmorecol:)
+
+ih_ibar:\TNonogram Solver.|MDrag a Nonogram puzzle to here to prepare to solve it.
+wh_info:This \w displays information about the Nonogram Solver.
+ih_info_website:\Svisit the website for newer versions.
+
+wh_empty:Drag a Nonogram puzzle file to this \w to prepare to solve it.
+wh_running:\Wsolving a Nonogram puzzle.
+wh_finished:\Wshowing an exhausted Nonogram puzzle.
+wh_clear:\Wdisplaying a blank grid for solving a Nonogram puzzle.
+wh_paused:\Wpaused in the middle of solving a Nonogram puzzle.
+wh_idiot:Don't bother clicking; it doesn't do anything in this \w.
+wh_preco:|MThe co-ordinates are
+wh_postco:.
+wh_ticked:This means the solution is correct.
+wh_unticked:This means the grid currently does not hold a correct solution.
+
+wa_vwork:This area shows the state of each row.
+wr_vwork_infoon:This light is on because this row has unused information.
+wr_vwork_infooff:This light is off because this row's information is used up.
+wr_vwork_focuson:This light is on because this row is being processed.
+wr_vwork_focusoff:This light is off because this row is not being processed.
+
+wa_hwork:This area shows the state of each column.
+wr_hwork_infoon:This light is on because this column has unused information.
+wr_hwork_infooff:This light is off because this column's information is used up.
+wr_hwork_focuson:This light is on because this column is being processed.
+wr_hwork_focusoff:This light is off because this column is not being processed.
+
+ih_save_file:Drag the icon to the directory in which you want to save the file.|MOr, drag it to the program into which you want to transfer the data.
+ih_save_okay:Click here to save the data with the current filename. If it is not a full pathname, you must drag the icon to a directory display first.
+ih_save_filename:This shows the filename for this data. If it is not a full pathname, drag the icon into a directory display.
+wa_save:This box allows you to save the grid in a file, or to transfer it to another application.
+ih_save_top:Select this to make column clues appear along the top of the grid.
+ih_save_bottom:Select this to make column clues appear along the bottom of the grid.
+ih_save_left:Select this to make row clues appear down the left of the grid.
+ih_save_right:Select this to make row clues appear down the right of the grid.
+ih_save_cell:Select this to produce a grid with currently known cells.
+
+mt_ibar:Nonogram
+mi_ibar:>Info,New|Quit
+mh_ibar_info:\Rget information about this version of the Nonogram Solver.
+mh_ibar_new:\Sopen a new Nonogram window.
+mh_ibar_quit:\Squit the Nonogram Solver.
+
+mt_root:Nonogram
+mi_root:>File,Save,Algorithm,Action
+mh_root_file:\Rget information about this Nonogram.
+mg_root_file:\Gthere is no Nonogram to give information about.
+mh_root_save:\Rsave this grid as different types of files.
+mh_root_algo:\Rchange the line-solving algorithm.
+mh_root_action:\Rstart or stop solving this Nonogram.
+
+mt_save:Save
+mi_save:>Text,>Draw
+mh_save_text:\Rsave this grid as a text file.
+mh_save_draw:\Rsave this grid as a Draw file.
+mg_save_x:\Gthere is no grid to save.
+
+mt_action:Action
+mi_action:Exhaust,Run,Once|Clear,Discard
+mh_action_exhaust:\Scount all solutions.
+mh_action_start:\Sbegin solving this Nonogram.
+mh_action_cont:\Scontinue solving this Nonogram.
+mh_action_stop:\Ssuspend the solution of this Nonogram.
+mg_action_solve:\Gthere is no Nonogram to solve.
+mg_action_done:\Gthe Nonogram is fully solved.
+mh_action_once:\Ssolve a single line of this Nonogram.
+mh_action_clear:\Sclear the grid to begin solving again.
+mg_action_clear:\Gthere is no grid to clear.
+mh_action_discard:\Sdiscard this Nonogram.
+mg_action_discard:\Gthere is no Nonogram to discard.
+
+mt_algo:Algorithm
+mi_algo:Fast,Complete,Fast/Complete hybrid,Olsak,Fast/Olsak,Fast/Olsak/Complete,Fast/Oddones,Fast/Oddones/Complete,Null,Fast-Complete,Fast/Fast-Complete
+mh_algo_fast:\Suse the Fast algorithm.
+mh_algo_comp:\Suse the Complete algorithm.
+mh_algo_hyb:\Suse the Fast/Complete hybrid algorithm.
+mh_algo_null:\Suse the Null algorithm.
+mh_algo_olsak:\Suse the Olsak algorithm.
+mh_algo_folsak:\Suse the Fast/Olsak hybrid algorithm.
+mh_algo_folsakc:\Suse the Fast/Olsak/Complete hybrid algorithm.
+mh_algo_fodd:\Suse the Fast/Oddones hybrid algorithm.
+mh_algo_foddc:\Suse the Fast/Oddones/Complete hybrid algorithm.
+mh_algo_fcomp:\Suse the Fast-Complete algorithm.
+mh_algo_ffcomp:\Suse the Fast/Fast-Complete hybrid algorithm.

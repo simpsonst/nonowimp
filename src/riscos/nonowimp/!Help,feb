@@ -1,0 +1,5 @@
+RMEnsure UtilityModule 3.00 Run <Obey$Dir>.!RO2Help
+Set Nonogram$Dir <Obey$Dir>
+Set Nonogram$Path <Nonogram$Dir>.
+Filer_OpenDir Nonogram:Docs
+Filer_Run Nonogram:Docs.Guide
