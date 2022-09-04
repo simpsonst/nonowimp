@@ -22,7 +22,7 @@ MYCURDIR:=$(subst $(myspace),\$(myspace),$(CURDIR)/)
 MYABSPATH=$(foreach f,$1,$(if $(patsubst /%,,$f),$(MYCURDIR)$f,$f))
 
 -include $(call MYABSPATH,config.mk)
-sinclude nonowimp-env.mk
+-include nonowimp-env.mk
 
 CPPFLAGS += -DVERSION='"$(file <VERSION)"'
 
@@ -71,13 +71,13 @@ include binodeps.mk
 
 tmp/obj/version.o: VERSION
 
-tmp/README.html: README.md
-	$(MKDIR) '$(@D)'
-	$(MARKDOWN) '$<' > '$@'
+# tmp/README.html: README.md
+# 	$(MKDIR) '$(@D)'
+# 	$(MARKDOWN) '$<' > '$@'
 
-$(BINODEPS_OUTDIR)/riscos/!Nonogram/Docs/Guide,fff: tmp/README.html
-	$(MKDIR) "$(@D)"
-	$(HTML2TXT) "$<" > "$@"
+# $(BINODEPS_OUTDIR)/riscos/!Nonogram/Docs/Guide,fff: tmp/README.html
+# 	$(MKDIR) "$(@D)"
+# 	$(HTML2TXT) "$<" > "$@"
 
 $(BINODEPS_OUTDIR)/riscos/!Nonogram/Docs/VERSION,fff: VERSION
 	$(MKDIR) "$(@D)"
